@@ -69,6 +69,7 @@ model nitri "ASM1 nitrification tank"
   parameter Modelica.SIunits.Length de=4.5 "depth of aeration";
   parameter Real R_air=23.5 "specific oxygen feed factor [gO2/(m^3*m)]";
   WWU.MassConcentration So_sat "Dissolved oxygen saturation";
+  parameter Real Kla = 84;
 
   Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent={{-110,
             -10},{-90,10}})));
@@ -413,24 +414,25 @@ model WWSource "Wastewater source"
   extends WasteWater.Icons.WWSource;
   Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(extent={{88,
             -80},{108,-60}})));
-
+  Modelica.Blocks.Interfaces.RealInput data[14]
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
 equation
 
-  Out.Q =-18446;
-  Out.Si =30;
-  Out.Ss =69.50;
-  Out.Xi =51.20;
-  Out.Xs =202.32;
-  Out.Xbh =28.17;
-  Out.Xba =0;
-  Out.Xp =0;
-  Out.So =0;
-  Out.Sno =0;
-  Out.Snh =31.56;
-  Out.Snd =6.95;
-  Out.Xnd =10.59;
-  Out.Salk =7.00;
+  Out.Q =-data[1];
+  Out.Si =data[2];
+  Out.Ss =data[3];
+  Out.Xi =data[4];
+  Out.Xs =data[5];
+  Out.Xbh =data[6];
+  Out.Xba =data[7];
+  Out.Xp =data[8];
+  Out.So =data[9];
+  Out.Sno =data[10];
+  Out.Snh =data[11];
+  Out.Snd =data[12];
+  Out.Xnd =data[13];
+  Out.Salk =data[14];
+
   annotation (
     Documentation(info="This component provides all ASM1 data at the influent of a wastewater treatment plant.
 The dimension of InPort is 14.
