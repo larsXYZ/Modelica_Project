@@ -1,0 +1,12 @@
+ 
+Compiling and linking the model (Visual C++). 
+ 
+dsmodel.c
+   Creating library dymosim.lib and object dymosim.exp
+"Problem with adding manifest, trying again " 
+Microsoft (R) Manifest Tool version 6.3.9600.17336
+Copyright (c) Microsoft Corporation 2012. 
+All rights reserved.
+ 
+Successful generation of Dymosim. 
+ 
