@@ -51,7 +51,6 @@ Parameters:
 "));
 end deni;
 
-
 model SecClarModTakacs "Secondary Clarifier ASM1 Model based on Takacs"
 
   extends WasteWater.Icons.SecClar;
@@ -846,8 +845,6 @@ end sensor_TSS;
         annotation (Placement(transformation(extent={{97,-5},{113,11}})));
       WasteWater.ASM1.sensor_TSS sensor_TSS1
         annotation (Placement(transformation(extent={{32,15},{48,30}})));
-      Modelica.Blocks.Sources.Constant Temperature(k=15)
-        annotation (Placement(transformation(extent={{-104,49},{-84,69}})));
       Modelica.Blocks.Sources.CombiTimeTable CombiTableTime(
         fileName=Modelica.Utilities.Files.loadResource("modelica://WasteWater/Resources/ASM1/Inf_dry.txt"),
         table=[0,0; 1,1],
@@ -907,29 +904,7 @@ end sensor_TSS;
           points={{-54,-55},{-46,-55},{-46,-14.5},{-75.1,-14.5}},
           color={0,0,127},
           smooth=Smooth.None));
-      connect(Temperature.y, tank1.T) annotation (Line(
-          points={{-83,59},{-78,59},{-78,36},{-76,36}},
-          color={0,0,127},
-          smooth=Smooth.None));
-      connect(Temperature.y, tank2.T) annotation (Line(
-          points={{-83,59},{-51,59},{-51,36},{-48,36}},
-          color={0,0,127},
-          smooth=Smooth.None));
 
-      connect(tank5.T, tank2.T) annotation (Line(
-          points={{-6,8},{-6,72},{-51,72},{-51,36},{-48,36}},
-          color={0,0,127},
-          smooth=Smooth.None));
-      connect(tank4.T, tank2.T) annotation (Line(
-          points={{-32,8},{-37,8},{-37,15},{-6,15},{-6,72},{-51,72},{-51,36},{-48,
-              36}},
-          color={0,0,127},
-          smooth=Smooth.None));
-      connect(tank3.T, tank2.T) annotation (Line(
-          points={{-58,9},{-63,9},{-63,15},{-6,15},{-6,72},{-51,72},{-51,36},{-48,
-              36}},
-          color={0,0,127},
-          smooth=Smooth.None));
       connect(CombiTableTime.y, wWSource.data) annotation (Line(
           points={{-90,89},{-82,89}},
           color={0,0,127},
@@ -6011,7 +5986,6 @@ The dimension of InPort is 14.
  14 Salk[mmol/l]
 "));
   end WWSourceConnectorLess;
-
 
 model nitri_2b "ASM1 nitrification tank"
   // nitrification (aerated) tank, based on the ASM1 model
