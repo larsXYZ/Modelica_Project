@@ -1,0 +1,11 @@
+Log-file of program ./dymosim
+(generated: Tue Feb 13 11:55:42 2018)
+
+dymosim started
+... "dsin.txt" loading (dymosim input file)
+... loading "Inf_dry" from "C:/Users/haakonyr/Downloads/Modelica_Project-master/WasteWater-master/WasteWater/Resources/ASM1/Inf_dry.txt"
+The following error was detected at time: 0
+
+Model error - division by zero: (tank5.Xp) / (Settler.Xf) = (0) / (0)
+
+Error: Failed to start model.
